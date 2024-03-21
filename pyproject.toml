@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "legal-colombia"
+version = "0.1.0"
+description = ""
+authors = ["jjovalle99 <jj.ovalle@uniandes.edu.co>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
