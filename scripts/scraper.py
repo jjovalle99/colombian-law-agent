@@ -31,7 +31,7 @@ async def fetch_page_content(browser: Browser, url: str) -> str:
 
     # Iterate over the found links, clicking on every 10th link.
     for link in links:
-        await link.click()
+        await link.click(timeout=int(6e4))
 
     # Retrieve the full HTML content of the page.
     content = await page.content()
