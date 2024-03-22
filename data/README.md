@@ -6,6 +6,7 @@ dvc remote add -d s3-remote s3://legal-colombia/
 dvc add data/
 git add .gitignore data.dvc
 git commit -m "Add data directory to DVC tracking"
+dvc push
 ```
 
 # Scraping Codes
