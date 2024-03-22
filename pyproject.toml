@@ -12,6 +12,8 @@ langserve = {extras = ["all"], version = "^0.0.51"}
 langchain-openai = "^0.1.0"
 qdrant-client = "^1.8.0"
 modal = "^0.61.92"
+cohere = "^5.1.0"
+langchainhub = "^0.1.15"
 
 
 [tool.poetry.group.dev.dependencies]
