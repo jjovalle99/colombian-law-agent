@@ -2,3 +2,10 @@
 # the performance. Learn more at
 # https://dvc.org/doc/user-guide/dvcignore
 data/README.md
+data/constitucion/text/metadata.json
+data/codigo_penal/text/metadata.json
+data/codigo_civil/text/metadata.json
+data/codigo_comercio/text/metadata.json
+data/codigo_general_del_proceso/text/metadata.json
+data/codigo_sustantivo_trabajo/text/metadata.json
+data/codigo_procedimental_laboral/text/metadata.json
