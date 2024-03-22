@@ -16,6 +16,7 @@ python-dotenv = "^1.0.1"
 
 [tool.poetry.group.data.dependencies]
 playwright = "^1.42.0"
+beautifulsoup4 = "^4.12.3"
 
 [build-system]
 requires = ["poetry-core"]
