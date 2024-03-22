@@ -7,6 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "~3.11"
+langchain = "^0.1.13"
+langserve = {extras = ["all"], version = "^0.0.51"}
+langchain-openai = "^0.1.0"
+qdrant-client = "^1.8.0"
+modal = "^0.61.92"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -22,3 +27,6 @@ dvc = {extras = ["s3"], version = "^3.48.4"}
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120

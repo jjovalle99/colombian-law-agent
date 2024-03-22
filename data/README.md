@@ -30,6 +30,16 @@ git push
 # Pull the data files from the S3 bucket
 dvc pull
 ```
+# Metadata
+```python
+python scripts/generate_metadata.py "data/constitucion/text/" "http://www.secretariasenado.gov.co/senado/basedoc/constitucion_politica_1991.html"
+python scripts/generate_metadata.py "data/codigo_penal/text/" "http://www.secretariasenado.gov.co/senado/basedoc/ley_0599_2000.html"
+python scripts/generate_metadata.py "data/codigo_general_del_proceso/text/" "http://www.secretariasenado.gov.co/senado/basedoc/ley_1564_2012.html"
+python scripts/generate_metadata.py "data/codigo_civil/text/" "http://www.secretariasenado.gov.co/senado/basedoc/codigo_civil.html"
+python scripts/generate_metadata.py "data/codigo_sustantivo_trabajo/text/" "http://www.secretariasenado.gov.co/senado/basedoc/codigo_sustantivo_trabajo.html"
+python scripts/generate_metadata.py "data/codigo_procedimental_laboral/text/" "http://www.secretariasenado.gov.co/senado/basedoc/codigo_procedimental_laboral.html"
+python scripts/generate_metadata.py "data/codigo_comercio/text/" "http://www.secretariasenado.gov.co/senado/basedoc/codigo_comercio.html"
+```
 
 # Scraping Codes
 ## Constitución Política de la República de Colombia
