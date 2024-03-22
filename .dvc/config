@@ -1,0 +1,5 @@
+[core]
+    remote = s3-remote
+    autostage = true
+['remote "s3-remote"']
+    url = s3://legal-colombia/
