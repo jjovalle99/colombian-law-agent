@@ -1,5 +1,14 @@
-# Scraping Codes
+# DVC Setup
+```bash
+aws s3api create-bucket --bucket legal-colombia --region us-east-1
+dvc init
+dvc remote add -d s3-remote s3://legal-colombia/
+dvc add data/
+git add .gitignore data.dvc
+git commit -m "Add data directory to DVC tracking"
+```
 
+# Scraping Codes
 ## Constitución Política de la República de Colombia
 #### Get .htmls
 ```python
