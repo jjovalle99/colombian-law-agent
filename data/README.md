@@ -1,12 +1,34 @@
-# DVC Setup
+# DVC
+## Setup
 ```bash
+# Create an S3 bucket
 aws s3api create-bucket --bucket legal-colombia --region us-east-1
+
+# Initialize DVC
 dvc init
+
+# Configure S3 remote storage
 dvc remote add -d s3-remote s3://legal-colombia/
+
+# Commit changes to Git
 dvc add data/
+
+# Commit changes to Git
 git add .gitignore data.dvc
 git commit -m "Add data directory to DVC tracking"
+
+# Push data to S3 remote storage
 dvc push
+
+# Commit and push changes to Git
+git add data.dvc
+git commit -m "Update DVC file with S3 remote storage"
+git push
+```
+## Downloading files
+```bash
+# Pull the data files from the S3 bucket
+dvc pull
 ```
 
 # Scraping Codes
