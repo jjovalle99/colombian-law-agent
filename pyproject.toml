@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["jjovalle99 <jj.ovalle@uniandes.edu.co>"]
 readme = "README.md"
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "~3.11"
@@ -15,6 +16,7 @@ modal = "^0.61.92"
 cohere = "^5.1.0"
 langchainhub = "^0.1.15"
 langgraph = "^0.0.30"
+pydantic-settings = "^2.2.1"
 
 
 [tool.poetry.group.dev.dependencies]
