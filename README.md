@@ -49,3 +49,21 @@ python scripts/create_qdrant_collections.py \
     --llm "gpt-4-turbo-preview" \
     --embedding_model "text-embedding-3-large" 
 ```
+
+
+
+{
+  "input": {
+    "input": "Que significa la territorialidad en el ambito penal?",
+    "chat_history": [],
+    "agent_outcome": {
+      "tool": "string",
+      "tool_input": "string",
+      "log": "string",
+      "type": "AgentAction"
+    },
+    "intermediate_steps": []
+  },
+  "config": {},
+  "kwargs": {}
+}
