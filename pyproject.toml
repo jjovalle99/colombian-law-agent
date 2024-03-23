@@ -14,11 +14,13 @@ qdrant-client = "^1.8.0"
 modal = "^0.61.92"
 cohere = "^5.1.0"
 langchainhub = "^0.1.15"
+langgraph = "^0.0.30"
 
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.3"
 python-dotenv = "^1.0.1"
+pygraphviz = "^1.12"
 
 
 [tool.poetry.group.data.dependencies]

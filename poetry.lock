@@ -2211,6 +2211,20 @@ requests = ">=2,<3"
 types-requests = ">=2.31.0.2,<3.0.0.0"
 
 [[package]]
+name = "langgraph"
+version = "0.0.30"
+description = "langgraph"
+optional = false
+python-versions = "<4.0,>=3.9.0"
+files = [
+    {file = "langgraph-0.0.30-py3-none-any.whl", hash = "sha256:835d34d66d1ec1cad1825eee682f0c8a85edfd591ab552706a4f4211a3119b88"},
+    {file = "langgraph-0.0.30.tar.gz", hash = "sha256:58bb9faf081fdb4490cda8cef4421b01b64b241df92c5556c327b2c83cfd5e0f"},
+]
+
+[package.dependencies]
+langchain-core = ">=0.1.25,<0.2.0"
+
+[[package]]
 name = "langserve"
 version = "0.0.51"
 description = ""
@@ -3022,6 +3036,16 @@ files = [
 [package.extras]
 plugins = ["importlib-metadata"]
 windows-terminal = ["colorama (>=0.4.6)"]
+
+[[package]]
+name = "pygraphviz"
+version = "1.12"
+description = "Python interface to Graphviz"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "pygraphviz-1.12.tar.gz", hash = "sha256:8b0b9207954012f3b670e53b8f8f448a28d12bdbbcf69249313bd8dbe680152f"},
+]
 
 [[package]]
 name = "pygtrie"
@@ -4450,4 +4474,4 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.11"
-content-hash = "6e9c1017d26de90996b45e4ba3b5eea7c2f8b4127c86cd75d73eae7766e9332e"
+content-hash = "9e380f3742e5ae90587302d928ae1544b306da979172263ed8c6677fee0ec2cb"
