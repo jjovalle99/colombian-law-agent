@@ -16,7 +16,7 @@ modal = "^0.61.92"
 cohere = "^5.1.0"
 langchainhub = "^0.1.15"
 langgraph = "^0.0.30"
-pydantic-settings = "^2.2.1"
+pydantic = "^1.10.13"
 
 
 [tool.poetry.group.dev.dependencies]
