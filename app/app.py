@@ -1,13 +1,12 @@
 from fastapi import FastAPI
-
 from langchain.agents import create_openai_functions_agent
 from langgraph.prebuilt import ToolExecutor
+from langserve import add_routes
 
-from src.agent_worfklow import graph_agent
+from src.agent_worfklow import AgentWorkflow
 from src.prompts import prepare_legal_colombia_agent_prompt
 from src.settings import settings
 from src.tools import build_toolbelt
-from langserve import add_routes
 
 agent = create_openai_functions_agent(
     llm=settings.app.LLM_MODEL,
@@ -15,13 +14,14 @@ agent = create_openai_functions_agent(
     prompt=prepare_legal_colombia_agent_prompt(),
 )
 tool_executor = ToolExecutor(tools=build_toolbelt())
-graph_agent = graph_agent()
+workflow = AgentWorkflow(agent=agent, tool_executor=tool_executor)
+graph_agent = workflow.graph_agent()
 
 
 app = FastAPI(
-    title="LangChain Server",
+    title="Legal-Colombia-Cycle-Agent",
     version="1.0",
-    description="A simple API server using LangChain's Runnable interfaces",
+    description="Agent with colombian legal sources as tools.",
 )
 
 add_routes(
@@ -33,4 +33,4 @@ add_routes(
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app="serve:app", host="localhost", port=8000, reload=True)
+    uvicorn.run(app="app:app", host="localhost", port=8000, reload=True)

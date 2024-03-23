@@ -4,7 +4,7 @@ from typing import List
 from langchain.retrievers.document_compressors import CohereRerank
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_openai.embeddings import OpenAIEmbeddings
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings
 
 
 class CollectionName(Enum):
