@@ -1,10 +1,11 @@
 from enum import Enum
 from typing import List
 
-from langchain.retrievers.document_compressors import CohereRerank
 from langchain_openai.chat_models import ChatOpenAI
 from langchain_openai.embeddings import OpenAIEmbeddings
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
+
+from src.cohere_rerank import CohereRerank
 
 
 class CollectionName(Enum):
