@@ -65,17 +65,17 @@ The following technologies were utilized to build this app:
 
 ## Scripts
 
-## How to deploy the app?
+#### How to deploy the app?
 ```bash
 modal deploy app/app.py
 ```
 
-## How to deploy the UI?
+#### How to deploy the UI?
 ```bash
 modal deploy ui/serve_streamlit.py
 ```
 
-## How to create and populate Qdrant collections?
+#### How to create and populate Qdrant collections?
 ```bash
 python scripts/create_qdrant_collections.py \
     --collection_name "constitucion" \
@@ -127,5 +127,5 @@ python scripts/create_qdrant_collections.py \
     --embedding_model "text-embedding-3-large" 
 ```
 
-# How to collect and prepare data?
+#### How to collect and prepare data?
 See [data folder](https://github.com/jjovalle99/colombian-law-agent/tree/071573b467ea7c22b5a6c5e5f4c9a1e81fdcd2c9/data) for the entire script calls.
