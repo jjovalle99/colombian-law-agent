@@ -24,6 +24,7 @@ assets_mount = modal.Mount.from_local_file(**mounts_map["assets"])
 @stub.function(
     allow_concurrent_inputs=100,
     mounts=[streamlit_script_mount, assets_mount],
+    keep_warm=1,
 )
 @modal.web_server(8000)
 def run():
