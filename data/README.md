@@ -31,7 +31,7 @@ git push
 dvc pull
 ```
 # Metadata
-```python
+```bash
 python scripts/generate_metadata.py "data/constitucion/text/" "http://www.secretariasenado.gov.co/senado/basedoc/constitucion_politica_1991.html"
 python scripts/generate_metadata.py "data/codigo_penal/text/" "http://www.secretariasenado.gov.co/senado/basedoc/ley_0599_2000.html"
 python scripts/generate_metadata.py "data/codigo_general_del_proceso/text/" "http://www.secretariasenado.gov.co/senado/basedoc/ley_1564_2012.html"
@@ -44,7 +44,7 @@ python scripts/generate_metadata.py "data/codigo_comercio/text/" "http://www.sec
 # Scraping Codes
 ## Constitución Política de la República de Colombia
 #### Get .htmls
-```python
+```bash
 python scripts/scraper.py --output_path ./data/constitucion/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/constitucion_politica_1991.html" \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/constitucion_politica_1991_pr001.html" \
@@ -64,13 +64,13 @@ python scripts/scraper.py --output_path ./data/constitucion/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/constitucion_politica_1991_pr015.html"
 ```
 #### Transform .htmls to cleaned .txts
-```python
+```bash
 python scripts/html-to-txt.py --input_path ./data/constitucion/html --output_path ./data/constitucion/text
 ```
 
 ## Código Penal - LEY 599 DE 2000
 #### Get .htmls
-```python
+```bash
 python scripts/scraper.py --output_path ./data/codigo_penal/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/ley_0599_2000.html" \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/ley_0599_2000_pr001.html" \
@@ -94,14 +94,14 @@ python scripts/scraper.py --output_path ./data/codigo_penal/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/ley_0599_2000_pr019.html"
 ```
 #### Transform .htmls to cleaned .txts
-```python
+```bash
 python scripts/html-to-txt.py --input_path ./data/codigo_penal/html --output_path ./data/codigo_penal/text
 ```
 
 
 ## Código General del Proceso - LEY 1564 DE 2012
 #### Get .htmls
-```python
+```bash
 python scripts/scraper.py --output_path ./data/codigo_general_del_proceso/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/ley_1564_2012.html" \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/ley_1564_2012_pr001.html" \
@@ -121,14 +121,14 @@ python scripts/scraper.py --output_path ./data/codigo_general_del_proceso/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/ley_1564_2012_pr015.html" 
 ```
 #### Transform .htmls to cleaned .txts
-```python
+```bash
 python scripts/html-to-txt.py --input_path ./data/codigo_general_del_proceso/html --output_path ./data/codigo_general_del_proceso/text
 ```
 
 
 ## Código Civil - LEY 84 DE 1873
 #### Get .htmls
-```python 
+```bash 
 python scripts/scraper.py --output_path ./data/codigo_civil/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_civil.html" \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_civil_pr001.html" \
@@ -216,13 +216,13 @@ python scripts/scraper.py --output_path ./data/codigo_civil/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_civil_pr083.html"
 ```
 #### Transform .htmls to cleaned .txts
-```python
+```bash
 python scripts/html-to-txt.py --input_path ./data/codigo_civil/html --output_path ./data/codigo_civil/text
 ```
 
 ## Código Sustantivo del Trabajo
 #### Get .htmls
-```python
+```bash
 python scripts/scraper.py --output_path ./data/codigo_sustantivo_trabajo/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_sustantivo_trabajo.html" \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_sustantivo_trabajo_pr001.html" \
@@ -244,13 +244,13 @@ python scripts/scraper.py --output_path ./data/codigo_sustantivo_trabajo/html \
     --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_sustantivo_trabajo_pr017.html" 
 ```
 #### Transform .htmls to cleaned .txts
-```python
+```bash
 python scripts/html-to-txt.py --input_path ./data/codigo_sustantivo_trabajo/html --output_path ./data/codigo_sustantivo_trabajo/text
 ```
 
 ## Codigo Procesal Laboral
 #### Get .htmls
-```python
+```bash
 python scripts/scraper.py --output_path ./data/codigo_procedimental_laboral/html \
    --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_procedimental_laboral.html" \
    --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_procedimental_laboral_pr001.html" \
@@ -258,13 +258,13 @@ python scripts/scraper.py --output_path ./data/codigo_procedimental_laboral/html
    --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_procedimental_laboral_pr003.html" 
 ```
 #### Transform .htmls to cleaned .txts
-```python
+```bash
 python scripts/html-to-txt.py --input_path ./data/codigo_procedimental_laboral/html --output_path ./data/codigo_procedimental_laboral/text
 ```
 
 ##  Código de Comercio
 #### Get .htmls
-```python
+```bash
 python scripts/scraper.py --output_path ./data/codigo_comercio/html \
    --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_comercio.html" \
    --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_comercio_pr001.html" \
@@ -332,6 +332,6 @@ python scripts/scraper.py --output_path ./data/codigo_comercio/html \
    --webpage "http://www.secretariasenado.gov.co/senado/basedoc/codigo_comercio_pr063.html" 
 ```
 #### Transform .htmls to cleaned .txts
-```python
+```bash
 python scripts/html-to-txt.py --input_path ./data/codigo_comercio/html --output_path ./data/codigo_comercio/text
 ```

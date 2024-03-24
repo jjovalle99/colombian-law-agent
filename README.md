@@ -16,6 +16,8 @@ The app-building process began with drafting the entire workflow in a Jupyter No
 
 Subsequently, I performed a quick local deployment of the last Agent type mentioned using LangServe to verify if the endpoint would exhibit the expected behavior. Interested in the code? See [app_draft.ipynb](https://github.com/jjovalle99/colombian-law-agent/blob/071573b467ea7c22b5a6c5e5f4c9a1e81fdcd2c9/app_draft.ipynb).
 
+*Note: `gpt-4-turbo-preview` and `text-embedding-3-large` were used as the LLM and embedding model respectively*
+
 ### UI
 I constructed a basic UI for the endpoint using Streamlit. This UI facilitates simple calls without chat history. However, the Agent endpoint is designed to support chat history for those interested in utilizing it. Interested in the code? See [UI folder](https://github.com/jjovalle99/colombian-law-agent/tree/071573b467ea7c22b5a6c5e5f4c9a1e81fdcd2c9/ui)
 
@@ -35,19 +37,20 @@ The following technologies were utilized to build this app:
 | Deployment                     | Modal                                               |
 
 
+## Scripts
 
-## Deploy Agent Endpoint
+## How to deploy the app?
 ```bash
 modal deploy app/app.py
 ```
 
-## Deploy UI
+## How to deploy the UI?
 ```bash
 modal deploy ui/serve_streamlit.py
 ```
 
-## Create and populate Qdrant Collections
-```python
+## How to create and populate Qdrant collections?
+```bash
 python scripts/create_qdrant_collections.py \
     --collection_name "constitucion" \
     --folder "data/constitucion/text/" \
@@ -97,3 +100,6 @@ python scripts/create_qdrant_collections.py \
     --llm "gpt-4-turbo-preview" \
     --embedding_model "text-embedding-3-large" 
 ```
+
+# How to collect and prepare data?
+See [data folder](https://github.com/jjovalle99/colombian-law-agent/tree/071573b467ea7c22b5a6c5e5f4c9a1e81fdcd2c9/data) for the entire script calls.
