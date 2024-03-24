@@ -10,15 +10,15 @@ image = modal.Image.debian_slim(python_version="3.11") \
     )
 
 stub = modal.Stub(
-    name="legal-colombia-agent",
+    name="colombian-law-agent",
     image=image,
     secrets=[modal.Secret.from_name(label="legal-colombia-agent")],
 )
 
 app = FastAPI(
-    title="Legal Colombia Cycle Agent",
+    title="Colombian Law Agent",
     version="1.0",
-    description="Agent with colombian legal sources as tools.",
+    description="Agent with colombian law sources as tools.",
 )
 
 app.add_middleware(
