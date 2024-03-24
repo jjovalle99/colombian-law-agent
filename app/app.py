@@ -31,7 +31,7 @@ app.add_middleware(
 )
 
 
-@stub.function(mounts=[modal.Mount.from_local_python_packages("src")])
+@stub.function(mounts=[modal.Mount.from_local_python_packages("src")], keep_warm=1)
 @modal.asgi_app()
 def serve():
     from langchain.agents import create_openai_functions_agent
