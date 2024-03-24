@@ -14,16 +14,16 @@ class AgentWorkflow(BaseModel):
         This function creates a state graph for the agent workflow.
         """
         workflow = StateGraph(AgentState)
-        workflow.add_node(key="agent", action=self.run_agent)
-        workflow.add_node(key="action", action=self.execute_tools)
-        workflow.set_entry_point(key="agent")
+        workflow.add_node(key="Colombian Law Agent", action=self.run_agent)
+        workflow.add_node(key="Tools", action=self.execute_tools)
+        workflow.set_entry_point(key="Colombian Law Agent")
         workflow.add_conditional_edges(
-            start_key="agent",
+            start_key="Colombian Law Agent",
             condition=self.should_continue,
-            conditional_edge_mapping={"continue": "action", "end": END},
+            conditional_edge_mapping={"continue": "Tools", "end": END},
         )
 
-        workflow.add_edge(start_key="action", end_key="agent")
+        workflow.add_edge(start_key="Tools", end_key="Colombian Law Agent")
         return workflow.compile()
 
     async def run_agent(self, data):
