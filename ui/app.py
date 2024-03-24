@@ -1,9 +1,12 @@
 import asyncio
+import os
 
 import streamlit as st
+from dotenv import load_dotenv
 from langserve import RemoteRunnable
 
-remote_chain = RemoteRunnable("http://localhost:8000/agent/")
+load_dotenv()
+remote_chain = RemoteRunnable(os.getenv("REMOTE_ENDPOINT"))
 st.title("Colombian Law Agent")
 st.image("assets/flow.png", use_column_width=True)
 
