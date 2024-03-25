@@ -43,13 +43,20 @@ async def display_thinking_message(thinking_message):
 
 
 async def main():
+    # User can type their query here. If they leave it blank and choose from the selectbox, that will be used instead.
+
     user_input = st.selectbox(
-        "Enter your query or select an example:",
+        "Choose one of the following example queries:",
         [""] + example_queries,
         index=1,
         key="user_input",
         format_func=lambda x: x,
     )
+
+    user_custom_query = st.text_input("Or type your query here:", "")
+
+    # Decide which input to use: custom text input if provided, otherwise the selectbox choice.
+    final_user_input = user_custom_query if user_custom_query else user_input
 
     if st.button("Send"):
         final_answer_container = st.empty()
@@ -59,13 +66,14 @@ async def main():
             thinking_message = st.empty()
             thinking_task = asyncio.create_task(display_thinking_message(thinking_message))
 
-        response = await send_message(user_input, steps_placeholder)
+        response = await send_message(final_user_input, steps_placeholder)
 
         thinking_task.cancel()
         thinking_message.empty()
 
         with final_answer_container:
             st.markdown(f"#### Agent says:\n{response}")
+
 
 
 if __name__ == "__main__":
